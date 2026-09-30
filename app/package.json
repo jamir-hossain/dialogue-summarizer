@@ -1,0 +1,28 @@
+{
+  "name": "dialogue-summarizer",
+  "version": "1.0.0",
+  "description": "Summarize conversations with a fine-tuned FLAN-T5 model running in Node.js via Transformers.js (ONNX).",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "summarize": "node src/cli.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "nlp",
+    "summarization",
+    "transformers.js",
+    "onnx",
+    "flan-t5",
+    "express"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.0",
+    "express": "^5.2.1"
+  }
+}

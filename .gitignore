@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Models are large — download from Colab or the Hugging Face Hub instead of committing them
+app/models/*
+!app/models/.gitkeep
+
+# Training artifacts created by the notebook
+notebooks/dialogue-summarizer-model/
+notebooks/dialogue-summarizer-onnx/
+notebooks/onnx_raw/
+*.zip
+
+# Environment / editor
+.env
+.DS_Store
+LICENSE
+.ipynb_checkpoints/
+__pycache__/

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dialogue Summarizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Dialogue Summarizer</h1>
+      <p class="subtitle">
+        Paste a conversation and get a one-paragraph summary. Powered by a fine-tuned
+        <strong>FLAN-T5</strong> model running in Node.js with <strong>Transformers.js</strong> (ONNX).
+      </p>
+      <p id="status" class="status">Checking model…</p>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <label for="dialogue">Conversation</label>
+        <div class="samples" id="samples" aria-label="Load a sample conversation"></div>
+      </div>
+      <textarea id="dialogue" rows="12"
+        placeholder="#Person1#: Hi, are you free this evening?&#10;#Person2#: Yes, why?"></textarea>
+      <div class="row small">
+        <span id="charCount">0 characters</span>
+        <span>Tip: label speakers as <code>#Person1#:</code> / <code>#Person2#:</code> for best results</span>
+      </div>
+
+      <div class="controls">
+        <label for="length">Summary length: <strong id="lengthValue">96</strong> tokens</label>
+        <input id="length" type="range" min="16" max="256" step="8" value="96">
+        <button id="summarizeBtn" type="button">Summarize</button>
+      </div>
+    </section>
+
+    <section class="card" id="resultCard" hidden>
+      <h2>Summary</h2>
+      <p id="summary"></p>
+      <p class="small" id="meta"></p>
+    </section>
+
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
